@@ -44,7 +44,28 @@ def login():
 
 @app.route('/teste_insert') 
 def teste_insert():
-    user = Usuario("Alba Lopes", "alba.lopes@ifrn.edu.br", "12345")
+    user = Usuario("Gabriel", "gabriel@ifrn.edu.br", "54321")
     db.session.add(user) #Insert into Usuario(nome, email, senha) values ('Alba Lopes', 'alba.lopes@ifrn.edu.br', '12345')
     db.session.commit()
     return 'Dados inseridos com sucesso!'
+
+@app.route('/teste_select')
+def teste_select():
+    users = Usuario.query.all()
+    #print(users)
+    for u in users:
+        print (u.nome)
+
+    user = Usuario.query.get(2)
+    print (f"O email do usuário de id 2 é {user.email}")
+
+    return 'dados recuperados'
+
+@app.route('/teste_update')
+def teste_update():
+    user = Usuario.query.get(1)
+    user.nome = "Alba L."
+    user.senha = "753951"
+    db.session.add(user)
+    db.session.commit()
+    return 'dados alterados com sucesso!'
