@@ -44,8 +44,8 @@ def login():
 
 @app.route('/teste_insert') 
 def teste_insert():
-    user = Usuario("Gabriel", "gabriel@ifrn.edu.br", "54321")
-    db.session.add(user) #Insert into Usuario(nome, email, senha) values ('Alba Lopes', 'alba.lopes@ifrn.edu.br', '12345')
+    user = Usuario("Jungwon", "jungwon@ifrn.edu.br", "54321")
+    db.session.add(user) # Insert into Usuario(nome, email, senha) values ('Dafne Lima', 'dafne.c@escolar.ifrn.edu.br', '12345')
     db.session.commit()
     return 'Dados inseridos com sucesso!'
 
@@ -64,8 +64,8 @@ def teste_select():
 @app.route('/teste_update')
 def teste_update():
     user = Usuario.query.get(1)
-    user.nome = "Alba L."
-    user.senha = "753951"
+    user.nome = "Dafne L."
+    user.senha = "123456"
     db.session.add(user)
     db.session.commit()
     return 'dados alterados com sucesso!'
