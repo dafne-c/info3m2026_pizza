@@ -1,0 +1,7 @@
+FLASK_APP=app:app
+SECRET_KEY=w3bLima+-
+DB_USERNAME=infoweb2026_dafne_18
+DB_PASSWORD=dafne
+DB_HOST=fases.tech
+DB_DATABASE=pizza
+DB_PORT=3308
